@@ -1,7 +1,7 @@
 const APIAI_TOKEN = process.env.APIAI_TOKEN
 
 const request = require('request')
-//const apiai = require('apiai')
+const apiai = require('apiai')
 
 
 //const apiaiApp = apiai(APIAI_TOKEN)
@@ -52,33 +52,33 @@ const receivedMessage = (event) => {
   let senderId = event.sender.id
   let text = event.message.text
 
-//   let apiai = apiaiApp.textRequest(text, {sessionId: 'BotCine'})
+  let apiai = apiaiApp.textRequest(text, {sessionId: 'BotCine'})
 
-//   apiai.on('response', (response) => {
-//     let aiText = ''
-//     // const resolvedQuery = response.result.resolvedQuery
-//     let msgObj = response.result.fulfillment.messages
-//     msgObj.forEach((obj) => {
-//       aiText = obj.speech
-//     })
-//     const action = response.result.action
-//     const parameters = response.result.parameters
+  apiai.on('response', (response) => {
+    let aiText = ''
+    // const resolvedQuery = response.result.resolvedQuery
+    let msgObj = response.result.fulfillment.messages
+    msgObj.forEach((obj) => {
+      aiText = obj.speech
+    })
+    const action = response.result.action
+    const parameters = response.result.parameters
 
-//     // console.log(`RESPONSE is:`, JSON.stringify(response, undefined, 2))
-//     // console.log(`Action is: ${action}`)
-//     // console.log(`TEXT is: ${aiText}`)
+    // console.log(`RESPONSE is:`, JSON.stringify(response, undefined, 2))
+    // console.log(`Action is: ${action}`)
+    // console.log(`TEXT is: ${aiText}`)
 
-//     switch (action) {
-//       default:
-//         actions.prepareSendAiMessage(senderId, aiText)
-//     }
-//   })
+    switch (action) {
+      default:
+        //actions.prepareSendAiMessage(senderId, aiText)
+    }
+  })
 
-//   apiai.on('error', (error) => {
-//     console.error(`Apiai returned an error ${error}`)
-//   })
+  apiai.on('error', (error) => {
+    console.error(`Apiai returned an error ${error}`)
+  })
 
-//   apiai.end()
+  apiai.end()
  }
 
 const processQuickReply = (event) => {

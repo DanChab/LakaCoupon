@@ -45,13 +45,13 @@ app.post('/webhook', (req, res) => {
   }
 })
 
-// /* Webhook for DialogFlow api to get response from the 3rd party API */
-// app.post('/shopibot', (req, res) => {
-//   // console.log('*** Webhook for api.ai query ***')
-//   // console.log(req.body.result)
-//   let aiText = req.body.result.fulfillment.speech
-//   // console.log(`aiText: ${aiText}`)
-//   let action = req.body.result.action
-//   // console.log(`action :${action}`)
-//   res.json({statusCode: 200})
-//})
+/* Webhook for DialogFlow api to get response from the 3rd party API */
+app.post('/shopibot', (req, res) => {
+  // console.log('*** Webhook for api.ai query ***')
+  // console.log(req.body.result)
+  let aiText = req.body.result.fulfillment.speech
+  // console.log(`aiText: ${aiText}`)
+  let action = req.body.result.action
+  // console.log(`action :${action}`)
+  res.json({statusCode: 200})
+})
