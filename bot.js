@@ -1,7 +1,7 @@
 const APIAI_TOKEN = process.env.APIAI_TOKEN
 
 const request = require('request')
-const apiai = require('apiai')
+//const apiai = require('apiai')
 
 
 //const apiaiApp = apiai(APIAI_TOKEN)
