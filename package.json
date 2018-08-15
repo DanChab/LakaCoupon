@@ -1,0 +1,24 @@
+{
+  "name": "lakacoupon",
+  "version": "1.0.0",
+  "description": "Discout on purchased item with coupon",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanChab/LakaCoupon.git"
+  },
+  "author": "Daniel Chabala",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanChab/LakaCoupon/issues"
+  },
+  "homepage": "https://github.com/DanChab/LakaCoupon#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "espress": "0.0.0",
+    "request": "^2.88.0"
+  }
+}
