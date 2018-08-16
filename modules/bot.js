@@ -31,7 +31,8 @@ const processPostback = (event) => {
           let text2 = `Here is how it works, i will present you different products from different shops then with my coupons go into different shops and use them to get a discount.`
           async.series({
             func1: actions.prepareSendAiMessage.bind(null, senderId, text1),
-            func2: actions.prepareSendAiMessage.bind(null,senderId, text2)
+            func2: actions.prepareSendAiMessage.bind(null,senderId, text2),
+            func3: actions.getUserDetails.bind(null, senderId, name)
           }, () => {})
         }
       })

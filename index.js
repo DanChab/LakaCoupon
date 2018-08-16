@@ -2,7 +2,7 @@
 
 const express = require('express')
 const bodyParser = require('body-parser')
-const bot = require('./bot')
+const bot = require('./modules/bot')
 
 const app = express()
 

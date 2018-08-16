@@ -4,6 +4,28 @@ const request = require('request')
 const delay = require('delay')
 const async = require('async')
 
+const getUserDetails = (senderId, userName) => {
+    request({
+      url: 'https://lakacoupon.herokuapp.com/usersDetails/getInfo',
+      body: {
+        userId: senderId,
+        userName: userName
+      },
+      method: 'POST',
+      json: true
+    }, (error, response, body) => {
+      if (!error && response.statusCode == 200) {
+        console.log('User details posted to server success!!!')
+        checkUserRegistration(senderId)
+      } else if (response.body.isUserAlready === 'yes'){
+        console.log('User already in DB')
+        checkUserRegistration(senderId)
+      }else {
+        console.error('Could not post user details to the server!!!')
+      }
+    })
+  }
+
 const prepareSendAiMessage = async (senderId, aiText) => { 
     let messageBubble = {
       recipient: {
@@ -43,5 +65,6 @@ const prepareSendAiMessage = async (senderId, aiText) => {
   }
 
   module.exports = {
+    getUserDetails,
     prepareSendAiMessage
   }
