@@ -32,7 +32,7 @@ const processPostback = (event) => {
           async.series({
             func1: actions.prepareSendAiMessage.bind(null, senderId, text1),
             func2: actions.prepareSendAiMessage.bind(null,senderId, text2)
-          })
+          }, () => {})
         }
       })
       break
