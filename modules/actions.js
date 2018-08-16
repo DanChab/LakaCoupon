@@ -6,7 +6,7 @@ const async = require('async')
 
 const getUserDetails = (senderId, userName) => {
     request({
-      url: 'https://lakacoupon.herokuapp.com/usersDetails/getInfo',
+      url: 'https://vicoupon-api.herokuapp.com/usersDetails/getInfo',
       body: {
         userId: senderId,
         userName: userName
