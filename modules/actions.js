@@ -16,10 +16,8 @@ const getUserDetails = (senderId, userName) => {
     }, (error, response, body) => {
       if (!error && response.statusCode == 200) {
         console.log('User details posted to server success!!!')
-        checkUserRegistration(senderId)
-      } else if (response.body.isUserAlready === 'yes'){
+      } else if (response.body.isUserRegistered === 'yes'){
         console.log('User already in DB')
-        checkUserRegistration(senderId)
       }else {
         console.error('Could not post user details to the server!!!')
       }
