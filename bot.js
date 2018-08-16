@@ -13,7 +13,7 @@ const processPostback = (event) => {
 
   switch (payload) {
     case 'GET_STARTED_PAYLOAD':
-
+      console.log('@@am in GETSTARTED')
       request({
         url: 'https://graph.facebook.com/v2.6/' + senderId,
         qs: {
@@ -21,7 +21,7 @@ const processPostback = (event) => {
           fields: 'first_name'
         },
         method: 'GET'
-      }, async (err, response, body) => {
+      }, (err, response, body) => {
         if (err) {
           console.log("Error greeting user's name:" + err)
         } else {
