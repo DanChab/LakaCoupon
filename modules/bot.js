@@ -5,7 +5,7 @@ const apiai = require('apiai')
 const async = require('async')
 const actions = require('./actions')
 
-//const apiaiApp = apiai(APIAI_TOKEN)
+const apiaiApp = apiai(APIAI_TOKEN)
 
 const processPostback = (event) => {
   let senderId = event.sender.id
@@ -57,7 +57,7 @@ const receivedMessage = (event) => {
   let senderId = event.sender.id
   let text = event.message.text
 
-  let apiai = apiaiApp.textRequest(text, {sessionId: 'BotCine'})
+  let apiai = apiaiApp.textRequest(text, {sessionId: 'LakaCoupon'})
 
   apiai.on('response', (response) => {
     let aiText = ''
