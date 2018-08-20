@@ -27,7 +27,7 @@ request({
         json: true
     }, (error, response, body) => {
         if (!error && response.statusCode === 200) {
-            console.log(`body: ${body}`);
+            console.log(`body: ${JSON.stringify(body, undefined, 2)}`);
             
         }else {
             console.error('Could not get product details and userId')
