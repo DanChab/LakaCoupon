@@ -28,14 +28,19 @@ request({
     }, (error, response, body) => {
         if (!error && response.statusCode === 200) {
             console.log(`body: ${JSON.stringify(body, undefined, 2)}`);
-            
+            createMgTemplate(body)
         }else {
             console.error('Could not get product details and userId')
         }
     })
-            })
+})
         }
     }else {
         console.log('Error: Could not get affiliates with notification')
+    }
+
+    const createMgTemplate = (body) => {
+        let productArray = body.products
+        console.log(`productArray: ${productArray}`)
     }
 })
