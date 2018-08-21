@@ -63,7 +63,7 @@ request({
         })
 
         let msgContent = {
-            "message":{
+           // "message":{
             "attachment":{
               "type":"template",
               "payload":{
@@ -72,7 +72,7 @@ request({
                 elements
               }
             }
-          }
+         // }
         }
 
     let usersDetails = body.usersDetails
