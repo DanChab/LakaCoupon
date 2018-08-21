@@ -3,7 +3,7 @@ const cron = require('cron')
 
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN
 
-    new CronJob('* * * * *', function() {
+    new cron('* * * * *', function() {
     request({
         url: 'https://vicoupon-api.herokuapp.com/notification/affiliateWithNotification',
         body: {
