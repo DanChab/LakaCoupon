@@ -104,4 +104,4 @@ const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN
         })
         }
     })
-    })
+    } , null, true, 'Africa/Harare')
