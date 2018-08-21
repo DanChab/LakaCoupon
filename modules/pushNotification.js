@@ -93,7 +93,7 @@ request({
             json: messageData
         
           }, (error, response, body) => {
-              console.log(`messeageData: ${messageData}`)
+              console.log(`messeageData: ${JSON.stringify(messageData, undefined, 2)}`)
             if (!error && response.statusCode == 200){
               console(`Notification sent to fbId: ${messageData.recipient.id}`)
              }
