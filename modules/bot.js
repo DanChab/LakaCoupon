@@ -28,7 +28,7 @@ const processPostback = (event) => {
           let bodyObj = JSON.parse(body)
           let name = bodyObj.first_name
           let text1 = `Hi ${name} am LakaCoupon, am a robot 🤖 and am here to notify you on different products from different shops and give you a discount on every product by using coupons.`
-          let text2 = `Here is how it works, i will present you different products from different shops then with my coupons go into different shops and use them to get a discount.`
+          let text2 = `Here is how it works, i will show you different products from different shops then with my coupons go into different shops and use them to get a discount.`
           async.series({
             func1: actions.prepareSendAiMessage.bind(null, senderId, text1),
             func2: actions.prepareSendAiMessage.bind(null,senderId, text2),
