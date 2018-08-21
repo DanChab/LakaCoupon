@@ -20,22 +20,22 @@ const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN
                 body.forEach((element) => {
                     let affiliateId = element._id
 
-        request({
-            url: 'https://vicoupon-api.herokuapp.com/notification/sendProductDetails',
-            body: {
-                affiliateId: affiliateId
-            },
-            method: 'POST',
-            json: true
-        }, (error, response, body) => {
-            if (!error && response.statusCode === 200) {
-                console.log(`body: ${JSON.stringify(body, undefined, 2)}`);
-                createMgTemplate(body)
-            }else {
-                console.error('Could not get product details and userId')
-            }
-        })
-    })
+                    request({
+                        url: 'https://vicoupon-api.herokuapp.com/notification/sendProductDetails',
+                        body: {
+                            affiliateId: affiliateId
+                        },
+                        method: 'POST',
+                        json: true
+                    }, (error, response, body) => {
+                        if (!error && response.statusCode === 200) {
+                            console.log(`body: ${JSON.stringify(body, undefined, 2)}`);
+                            createMgTemplate(body)
+                        }else {
+                            console.error('Could not get product details and userId')
+                        }
+                    })
+                })
             }
         }else {
             console.log('Error: Could not get affiliates with notification')
@@ -48,12 +48,13 @@ const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN
             productArray.forEach((product) => {
                 let productPrice = product.productPrice
                 let productImage = product.productImage
+                let productName = product.productName
                 let affiliateId = product.affiliateId
 
                 elements.push({
-                    "title":`${productPrice}`,
+                    "title":`~${productPrice}~`,
                     "image_url":productImage,
-                    "subtitle":`${productPrice}`,
+                    "subtitle":`${productName}`,
                     "buttons":[
                     {
                         "type": "postback",
