@@ -3,7 +3,7 @@ const CronJob = require('cron').CronJob
 
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN
 
-    new CronJob('* * * * *', function() {
+    //new CronJob('* * * * *', function() {
     request({
         url: 'https://vicoupon-api.herokuapp.com/notification/affiliateWithNotification',
         body: {
@@ -97,11 +97,11 @@ const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN
             }, (error, response, body) => {
                 console.log(`messeageData: ${JSON.stringify(messageData, undefined, 2)}`)
                 if (!error && response.statusCode == 200){
-                console(`Notification sent to fbId: ${messageData.recipient.id}`)
+                console.log(`Notification sent to fbId: ${messageData.recipient.id}`)
                 }
                 
             })
         })
         }
     })
-    } , null, true, 'Africa/Harare')
+    //} , null, true, 'Africa/Harare')
